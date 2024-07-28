@@ -6,7 +6,7 @@ body {
   justify-content: center;
   height: 100vh;
   align-items: center;
-  background-color: black;
+  background-color: #800a10;
 }
 
 .main-container {
@@ -42,7 +42,13 @@ body {
   background-color: orange;
 }
 
-.trailer-container {
+.watch-trailer {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  margin-left: 10px;
+}
+
+.video-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -57,19 +63,24 @@ body {
   transition: opacity 0.7s;
 }
 
-.active.trailer-container {
+.active.video-container {
   visibility: hidden;
   opacity: 0;
 }
 
-.trailer-container video {
+.video-container video, .video-container iframe {
   position: relative;
+  min-width: 800px;
   max-width: 900px;
   outline: none;
+  z-index: 99;
+}
+.video-container iframe {
+  min-height: 500px;
 }
 
 @media (max-width: 991px) {
-  .trailer-container video {
+  .video-container video, .video-container iframe {
     max-width: 90%;
   }
 }
